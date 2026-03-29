@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanh Hoá Vibes</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+/* HEADER */
+header {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 50px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* MENU */
+nav {
+    text-align: center;
+    padding: 10px;
+    background: #020617;
+}
+
+nav button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background: #38bdf8;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* SECTION */
+section {
+    display: none;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+
+/* CARD */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+button.action {
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌊 Thanh Hoá Vibes</h1>
+</header>
+
+<nav>
+    <button onclick="show('home')">Trang chủ</button>
+    <button onclick="show('places')">Địa điểm</button>
+    <button onclick="show('food')">Ẩm thực</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <h2>✨ Chào mừng</h2>
+    <p>Khám phá Thanh Hoá với biển, núi và ẩm thực cực chất 🔥</p>
+</section>
+
+<!-- PLACES -->
+<section id="places">
+    <h2>📍 Địa điểm nổi bật</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Sam_Son_Beach.jpg">
+            <div class="card-content">
+                <h3>Biển Sầm Sơn</h3>
+                <p>Biển nổi tiếng, đông vui</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Thanh_Hoa_Citadel.jpg">
+            <div class="card-content">
+                <h3>Thành Nhà Hồ</h3>
+                <p>Di sản thế giới</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Pu_Luong.jpg">
+            <div class="card-content">
+                <h3>Pù Luông</h3>
+                <p>Thiên nhiên cực chill</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOD -->
+<section id="food">
+    <h2>🍜 Ẩm thực</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Nem_chua.jpg">
+            <div class="card-content">
+                <h3>Nem chua</h3>
+                <p>Đặc sản nổi tiếng</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Bun_cha.jpg">
+            <div class="card-content">
+                <h3>Bún chả</h3>
+                <p>Đậm đà hương vị</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="action" onclick="alert('Đi Thanh Hoá ngay 😎')">
+        Đi ngay!
+    </button>
+</section>
+
+<script>
+function show(id) {
+    document.querySelectorAll("section").forEach(sec => {
+        sec.classList.remove("active");
+    });
+    document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
